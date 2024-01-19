@@ -1,0 +1,19 @@
+package com.webapp.screenmatchfrase.controller;
+
+import com.webapp.screenmatchfrase.dto.FraseDTO;
+import com.webapp.screenmatchfrase.service.FraseService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class FraseController {
+
+    @Autowired
+    private FraseService servico;
+
+    @GetMapping("/series/frases")
+    public FraseDTO obterFraseAleatoria(){
+        return servico.obterFraseAleatoria();
+    }
+}
